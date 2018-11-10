@@ -1,17 +1,44 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Daves I Know</title>
         <link rel="stylesheet" type="text/css" href="index.css"> </link>
+        <meta name="description" content="An exploration of Daves">
+        <meta name="keywords" content="Daves,Dave">
+        <meta charset="iso-8859-1">
+        <script type="text/javascript" src="src/brython.js"></script>
 	</head>
-	<body>
+	<body onload="brython(1)">
+
+        <script type="text/python">
+        from browser import document, alert
+
+        def echo(ev):
+            acceptable_names = [
+                'Brett', 'David', 'Liz', 'Emily', 'Ethan',
+                'Jakub', 'Joe', 'Leanne', 'Lindsey', 'Lili',
+                'Mathias', 'Nick', 'Olga', 'Ryan', 'Sumair',
+                'Thomas', 'Alex', 'Chelsea', 'Gabe', 'Jordan',
+                'Jack', 'Matt', 'Miles', 'Robert', 'Mossy'
+                ]
+            if document["zone"].value in acceptable_names:
+                alert("Hello {} !".format(document["zone"].value))
+            else:
+                alert("Go away, {} !".format(document["zone"].value))
+
+        document["test"].bind("click", echo)
+        </script>
+        <p>Your name is : <input id="zone" autocomplete="off">
+        <button id="test">clic !</button></p>
+
 		<p>Some of us are David, but most of us are Dave.</p>
 		<p><h1>Daves and Davids</h1><a href="https://www.youtube.com/watch?v=8nvzEqsZIGo">Dave</a> is</p>
 		<h2 style="color:red">Daves</h2>
 		<h3>Dave F.</h3>
-        <img src="modular-synthiness.jpg"/>
+        <img src="img/modular-synthiness.jpg">
 		<p>Dave F. is a Dave.</p>
-        <h1 class="species">Cats</h1>
-        <h1 class="species">Pigs</h1>
-        <h2 class="size">Large</h2>
+        <h1 class="species">Bicycles</h1>
+        <h1 class="species">Synthesizers</h1>
+        <h2 class="size">Keyboards</h2>
 	</body>
 </html>
